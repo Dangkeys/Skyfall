@@ -99,6 +99,7 @@ public class Player : MonoBehaviour
     }
     public void Hurt()
     {
+        SoundManager.PlaySound(SoundType.Collision, 0.5f);
         currentHealth--;
         if (currentHealth == 0)
         {
@@ -124,15 +125,16 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            playerSkin.SetSkin(Skin.SkinColor.Green);
+            playerSkin.SetSkin(Skin.SkinColor.Blue);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            playerSkin.SetSkin(Skin.SkinColor.Blue);
+            playerSkin.SetSkin(Skin.SkinColor.Green);
         }
     }
     public void IncreaseScore()
     {
+        SoundManager.PlaySound(SoundType.GetScore, 0.5f);
         score++;
         UpdateScoreUI();
     }
