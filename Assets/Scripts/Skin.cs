@@ -6,7 +6,7 @@ public class Skin : MonoBehaviour
     [SerializeField] private GameObject redGuy;
     [SerializeField] private GameObject greenGuy;
     [SerializeField] private GameObject blueGuy;
-    public enum SkinColor { Red, Green, Blue }
+    public enum SkinColor { Red, Blue, Green }
     [SerializeField] private SkinColor currentSkinColor = SkinColor.Red;
     private void Start()
     {
@@ -23,11 +23,11 @@ public class Skin : MonoBehaviour
             case SkinColor.Red:
                 redGuy.SetActive(true);
                 break;
-            case SkinColor.Green:
-                greenGuy.SetActive(true);
-                break;
             case SkinColor.Blue:
                 blueGuy.SetActive(true);
+                break;
+            case SkinColor.Green:
+                greenGuy.SetActive(true);
                 break;
             default:
                 redGuy.SetActive(true);
